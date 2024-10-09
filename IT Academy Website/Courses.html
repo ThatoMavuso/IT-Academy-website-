@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Academy</title>
+    <link rel="stylesheet" href="courses.css">
+</head>
+<body>
+    <div class="hero">
+        <header>
+            <div class="header-content">
+                <a href="index.html"><img class="logo" src="Images/Logo/logo2.jpg" alt="IT Academy Logo"></a>
+                <h1>IT Academy</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Courses.html">Courses</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <h2>Welcome to IT Academy</h2>
+            <p>We are a community dedicated to providing education on all aspects of the field of information technology.</p>
+            
+            <div class="filter">
+                <label for="category">Filter by category:</label>
+                <select id="category" onchange="filterCourses()">
+                    <option value="all">All</option>
+                    <option value="programming">Programming</option>
+                    <option value="networking">Networking</option>
+                    <option value="data-science">Data Science</option>
+                </select>
+            </div>
+
+            <div class="course-list">
+                <div class="course-item programming">
+                    <img src="Images/Courses/programming.jpg" alt="Programming Course">
+                    <h3>Introduction to Programming</h3>
+                    <p>Learn the basics of programming with this comprehensive course.</p>
+                </div>
+                <div class="course-item networking">
+                    <img src="Images/Courses/Networking-Fundemntals.jpg" alt="Networking Course">
+                    <h3>Networking Fundamentals</h3>
+                    <p>Understand the principles of networking and how to set up a network.</p>
+                </div>
+                <div class="course-item data-science">
+                    <img src="Images/Courses/Data-Science.jpg" alt="Data Science Course">
+                    <h3>Data Science Basics</h3>
+                    <p>Explore data analysis and machine learning concepts.</p>
+                </div>
+                <div class="course-item programming">
+                    <img src="Images/Courses/Advanced-Programming.jpg" alt="Advanced Programming Course">
+                    <h3>Advanced Programming</h3>
+                    <p>Deep dive into advanced programming concepts and languages.</p>
+                </div>
+                <div class="course-item networking">
+                    <img src="Images/Courses/Advanced-Networking.jpeg" alt="Advanced Networking Course">
+                    <h3>Advanced Networking</h3>
+                    <p>Learn about advanced networking protocols and configurations.</p>
+                </div>
+            </div>
+        </main>
+    
+    <footer>
+        <p>&copy; 2024 Advanced web development assignment</p>
+    </footer>
+</div>
+    <script>
+        function filterCourses() {
+            const category = document.getElementById('category').value;
+            const courses = document.querySelectorAll('.course-item');
+
+            courses.forEach(course => {
+                course.style.display = (category === 'all' || course.classList.contains(category)) ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
